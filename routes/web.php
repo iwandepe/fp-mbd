@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use  App\Http\Controllers\EmployeeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +29,6 @@ Route::group(['prefix' => 'example'], function () {
    Route::view('register', 'examples.register');
    Route::view('tables', 'examples.tables');
    Route::view('upgrade', 'examples.upgrade');
-
 });
+
+Route::get('employee', [EmployeeController::class, 'index']);
