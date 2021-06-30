@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::group(['prefix' => 'example'], function () {
+   Route::view('dashboard', 'examples.dashboard');
+   Route::view('icons', 'examples.icons');
+   Route::view('login', 'examples.login');
+   Route::view('map', 'examples.map');
+   Route::view('maps', 'examples.maps');
+   Route::view('profile', 'examples.profile');
+   Route::view('register', 'examples.register');
+   Route::view('tables', 'examples.tables');
+   Route::view('upgrade', 'examples.upgrade');
+
+});
