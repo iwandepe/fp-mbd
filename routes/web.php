@@ -24,7 +24,7 @@ Route::group(['prefix' => 'example'], function () {
 Route::group(['prefix' => '/employee'], function() {
     Route::get('/', [EmployeeController::class, 'index']);
     Route::get('/add', [EmployeeController::class, 'add']);
-    Route::get('/{id}/edit.blade.php', [EmployeeController::class, 'edit']);
+    Route::get('/{id}/edit', [EmployeeController::class, 'edit']);
     Route::put('/{id}', [EmployeeController::class, 'update']);
     Route::post('/', [EmployeeController::class, 'store']);
     Route::delete('/{id}', [EmployeeController::class, 'destroy']);

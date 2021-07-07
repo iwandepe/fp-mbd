@@ -6,7 +6,14 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Light table</h3>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h3 class="my-auto">Employee</h3>
+                            <div class="ml-auto m-0">
+                                <a href="/employee/add" class="btn btn-primary m-0">Add New Employee</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive">
@@ -92,7 +99,7 @@
                                             <a href="/employee/{{$employee->employee_id}}/edit" class="text-primary pr-2">
                                                 Edit
                                             </a>
-                                            <a href="#" data-toggle="modal" data-target="#deleteModal{{$employee->employee_id}}" class="text-danger">
+                                            <a href="/employee/{{$employee->employee_id}}/delete" data-toggle="modal" data-target="#deleteModal{{$employee->employee_id}}" class="text-danger">
                                                 Delete
                                             </a>
                                         </div>
