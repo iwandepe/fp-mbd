@@ -178,7 +178,7 @@ function create(input, value) {
         throw new ParchmentError("Unable to create " + input + " blot");
     }
     var BlotClass = match;
-    var node = 
+    var node =
     // @ts-ignore
     input instanceof Node || input['nodeType'] === Node.TEXT_NODE ? input : BlotClass.create(value);
     return new BlotClass(node, value);
@@ -7047,7 +7047,7 @@ var DIFF_EQUAL = 0;
  * any common prefix or suffix off the texts before diffing.
  * @param {string} text1 Old string to be diffed.
  * @param {string} text2 New string to be diffed.
- * @param {Int} cursor_pos Expected edit position in text1 (optional)
+ * @param {Int} cursor_pos Expected edit.blade.php position in text1 (optional)
  * @return {Array} Array of diff tuples.
  */
 function diff_main(text1, text2, cursor_pos) {
@@ -7453,8 +7453,8 @@ function diff_halfMatch_(text1, text2) {
 
 
 /**
- * Reorder and merge like edit sections.  Merge equalities.
- * Any edit section can move as long as it doesn't cross an equality.
+ * Reorder and merge like edit.blade.php sections.  Merge equalities.
+ * Any edit.blade.php section can move as long as it doesn't cross an equality.
  * @param {Array} diffs Array of diff tuples.
  */
 function diff_cleanupMerge(diffs) {
@@ -7549,10 +7549,10 @@ function diff_cleanupMerge(diffs) {
   while (pointer < diffs.length - 1) {
     if (diffs[pointer - 1][0] == DIFF_EQUAL &&
         diffs[pointer + 1][0] == DIFF_EQUAL) {
-      // This is a single edit surrounded by equalities.
+      // This is a single edit.blade.php surrounded by equalities.
       if (diffs[pointer][1].substring(diffs[pointer][1].length -
           diffs[pointer - 1][1].length) == diffs[pointer - 1][1]) {
-        // Shift the edit over the previous equality.
+        // Shift the edit.blade.php over the previous equality.
         diffs[pointer][1] = diffs[pointer - 1][1] +
             diffs[pointer][1].substring(0, diffs[pointer][1].length -
                                         diffs[pointer - 1][1].length);
@@ -7561,7 +7561,7 @@ function diff_cleanupMerge(diffs) {
         changes = true;
       } else if (diffs[pointer][1].substring(0, diffs[pointer + 1][1].length) ==
           diffs[pointer + 1][1]) {
-        // Shift the edit over the next equality.
+        // Shift the edit.blade.php over the next equality.
         diffs[pointer - 1][1] += diffs[pointer + 1][1];
         diffs[pointer][1] =
             diffs[pointer][1].substring(diffs[pointer + 1][1].length) +
@@ -7595,7 +7595,7 @@ module.exports = diff;
  *     => [2, [[DIFF_INSERT, 'new'], [DIFF_DELETE, 'xy'], [DIFF_DELETE, 'z']]]
  *
  * @param {Array} diffs Array of diff tuples
- * @param {Int} cursor_pos Suggested edit position. Must not be out of bounds!
+ * @param {Int} cursor_pos Suggested edit.blade.php position. Must not be out of bounds!
  * @return {Array} A tuple [cursor location in the modified diff, modified diff]
  */
 function cursor_normalize_diff (diffs, cursor_pos) {
@@ -7626,7 +7626,7 @@ function cursor_normalize_diff (diffs, cursor_pos) {
 }
 
 /*
- * Modify a diff such that the edit position is "shifted" to the proposed edit location (cursor_position).
+ * Modify a diff such that the edit.blade.php position is "shifted" to the proposed edit.blade.php location (cursor_position).
  *
  * Case 1)
  *   Check if a naive shift is possible:
@@ -7640,7 +7640,7 @@ function cursor_normalize_diff (diffs, cursor_pos) {
  *         d          d_next
  *
  * @param {Array} diffs Array of diff tuples
- * @param {Int} cursor_pos Suggested edit position. Must not be out of bounds!
+ * @param {Int} cursor_pos Suggested edit.blade.php position. Must not be out of bounds!
  * @return {Array} Array of diff tuples
  */
 function fix_cursor (diffs, cursor_pos) {
@@ -7668,7 +7668,7 @@ function fix_cursor (diffs, cursor_pos) {
       // Case 2)
       // d[1] is a prefix of d_next[1]
       // We can assume that d_next[0] !== 0, since d[0] === 0
-      // Shift edit locations..
+      // Shift edit.blade.php locations..
       ndiffs.splice(cursor_pointer, 2, [d_next[0], d[1]], [0, d[1]]);
       var suffix = d_next[1].slice(d[1].length);
       if (suffix.length > 0) {
