@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\OrderDetailController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -67,4 +68,13 @@ Route::group(['prefix' => '/supplier'], function() {
     Route::put('/{id}', [SupplierController::class, 'update']);
     Route::post('/', [SupplierController::class, 'store']);
     Route::delete('/{id}', [SupplierController::class, 'destroy']);
+});
+
+Route::group(['prefix' => '/order_detail'], function() {
+    Route::get('/', [OrderDetailController::class, 'index']);
+    Route::get('/add', [OrderDetailController::class, 'add']);
+    Route::get('/{id}/edit', [OrderDetailController::class, 'edit']);
+    Route::put('/{id}', [OrderDetailController::class, 'update']);
+    Route::post('/', [OrderDetailController::class, 'store']);
+    Route::delete('/{id}', [OrderDetailController::class, 'destroy']);
 });

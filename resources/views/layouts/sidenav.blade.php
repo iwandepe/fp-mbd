@@ -47,6 +47,12 @@
                             <i class="ni ni-bullet-list-67 text-primary"></i>
                             <span class="nav-link-text">Supplier</span>
                         </a>
+                    <li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order_detail">
+                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <span class="nav-link-text">Order Detail</span>
+                        </a>
                     </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link" href="examples/icons.html">--}}

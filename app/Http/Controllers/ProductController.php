@@ -28,7 +28,7 @@ class ProductController extends Controller
             'discontinued' => 'required'
         ]);
 
-        Productr::create($request->all());
+        Product::create($request->all());
 
         return redirect('/product');
     }
