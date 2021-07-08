@@ -30,6 +30,12 @@
                             <span class="nav-link-text">Order</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">
+                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <span class="nav-link-text">Product</span>
+                        </a>
+                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link" href="examples/icons.html">--}}
 {{--                            <i class="ni ni-planet text-orange"></i>--}}
