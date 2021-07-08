@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-use  App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -47,4 +48,13 @@ Route::group(['prefix' => '/product'], function() {
     Route::put('/{id}', [ProductController::class, 'update']);
     Route::post('/', [ProductController::class, 'store']);
     Route::delete('/{id}', [ProductController::class, 'destroy']);
+});
+
+Route::group(['prefix' => '/customer'], function() {
+    Route::get('/', [CustomerController::class, 'index']);
+    Route::get('/add', [CustomerController::class, 'add']);
+    Route::get('/{id}/edit', [CustomerController::class, 'edit']);
+    Route::put('/{id}', [CustomerController::class, 'update']);
+    Route::post('/', [CustomerController::class, 'store']);
+    Route::delete('/{id}', [CustomerController::class, 'destroy']);
 });
