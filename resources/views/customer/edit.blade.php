@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
+
 @section('content')
+@if(Session::has('error'))
+<div class="alert alert-danger text-white">
+    {{Session::get('error')}}
+</div>
+@endif
     <div class="row">
         <div class="col">
             <div class="card">

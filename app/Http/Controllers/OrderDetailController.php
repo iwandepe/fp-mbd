@@ -62,7 +62,7 @@ class OrderDetailController extends Controller
 
     public function edit($id)
     {
-        $order_detail = order_detail::where('product_id', $id)->first();
+        $order_detail = OrderDetail::where('product_id', $id)->first();
         return view('order_detail.edit', compact(['order_detail']));
     }
 
