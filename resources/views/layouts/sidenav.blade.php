@@ -19,9 +19,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="employee">
+                        <a class="nav-link" href="/employee">
                             <i class="ni ni-bullet-list-67 text-primary"></i>
                             <span class="nav-link-text">Employee</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">
+                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <span class="nav-link-text">Order</span>
                         </a>
                     </li>
 {{--                    <li class="nav-item">--}}

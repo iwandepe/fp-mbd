@@ -31,6 +31,10 @@ Route::group(['prefix' => '/employee'], function() {
 });
 
 Route::group(['prefix' => '/order'], function() {
-    Route::view('/add', 'orders.form');
+    Route::get('/', [OrderController::class, 'index']);
+    Route::get('/add', [OrderController::class, 'add']);
+    Route::get('/{id}/edit', [OrderController::class, 'edit']);
+    Route::put('/{id}', [OrderController::class, 'update']);
     Route::post('/', [OrderController::class, 'store']);
+    Route::delete('/{id}', [OrderController::class, 'destroy']);
 });

@@ -34,15 +34,15 @@ class Employee extends Model
     ];
 
     public function orders() {
-        return $this->hasMany('orders');
+        return $this->hasMany(Order::class);
     }
 
     public function employee_territories() {
-        return $this->hasMany('employee_territories');
+        return $this->hasMany(EmployeeTerritory::class);
     }
 
     public function employees() {
-        return $this->hasMany('employees');
+        return $this->hasMany(Employee::class);
     }
 
     public static function boot() {

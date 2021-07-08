@@ -38,9 +38,7 @@ class EmployeeController extends Controller
 
         Employee::create($request->all());
 
-        $employees = Employee::get();
-
-        return view('employee.index', compact(['employees']));
+        return redirect('/employee');
     }
 
     public function show($id)
@@ -96,8 +94,7 @@ class EmployeeController extends Controller
 
     public function destroy($id)
     {
-        DB::table('employees')->where('employee_id', $id)
-            ->delete();
+        Employee::where('employee_id', '=', $id)->first()->delete();
 
         return redirect('/employee');
     }

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'order_id';
+
+    public $timestamps = false;
+
     protected $fillable = [
         'customer_id',
         'employee_id',
@@ -23,4 +28,20 @@ class Order extends Model
         'ship_postal',
         'ship_country',
     ];
+
+    public function order_details() {
+        return $this->hasMany(OrderDetail::class);
+    }
+
+    public function employee() {
+        return $this->belongsTo(Employee::class);
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($order) {
+            $order->order_details()->delete();
+        });
+    }
 }
