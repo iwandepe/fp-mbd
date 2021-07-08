@@ -6,16 +6,16 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Create New Customer</h3>
+                    <h3 class="mb-0">Create New Supplier</h3>
                 </div>
                 <div class="form ml-4 mr-4">
-                    <form method="POST" enctype="multipart/form-data" action="/customer/form">
+                    <form method="POST" enctype="multipart/form-data" action="/supplier/form">
                         @csrf
                         <div class="form-group">
-                            <label for="customer_id" class="form-control-label">Customer id</label>
-                            <input class="form-control" type="text" value="" id="customer_id">
-                            @if ($errors->has('customer_id'))
-                                <span class="text-danger">{{ $errors->first('customer_id') }}</span>
+                            <label for="supplier_id" class="form-control-label">Supplier id</label>
+                            <input class="form-control" type="number" value="" id="supplier_id">
+                            @if ($errors->has('supplier_id'))
+                                <span class="text-danger">{{ $errors->first('supplier_id') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
@@ -87,6 +87,13 @@
                             <input class="form-control" type="text" value="" id="fax">
                             @if ($errors->has('fax'))
                                 <span class="text-danger">{{ $errors->first('fax') }}</span>
+                            @endif
+                        </div>
+                        <div class="form-group">
+                            <label for="homepage" class="form-control-label">Homepage</label>
+                            <input class="form-control" type="text" value="" id="homepage">
+                            @if ($errors->has('homepage'))
+                                <span class="text-danger">{{ $errors->first('homepage') }}</span>
                             @endif
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">Submit</button>

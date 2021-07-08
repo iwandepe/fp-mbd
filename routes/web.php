@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SupplierController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -57,4 +58,13 @@ Route::group(['prefix' => '/customer'], function() {
     Route::put('/{id}', [CustomerController::class, 'update']);
     Route::post('/', [CustomerController::class, 'store']);
     Route::delete('/{id}', [CustomerController::class, 'destroy']);
+});
+
+Route::group(['prefix' => '/supplier'], function() {
+    Route::get('/', [SupplierController::class, 'index']);
+    Route::get('/add', [SupplierController::class, 'add']);
+    Route::get('/{id}/edit', [SupplierController::class, 'edit']);
+    Route::put('/{id}', [SupplierController::class, 'update']);
+    Route::post('/', [SupplierController::class, 'store']);
+    Route::delete('/{id}', [SupplierController::class, 'destroy']);
 });
