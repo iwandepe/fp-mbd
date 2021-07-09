@@ -11,7 +11,15 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('product.index', compact(['products']));
+
+        $productCategoryDescList = [];
+
+        foreach ($products as $product) {
+            $result = DB::select("SELECT show_description({$product->category_id})");
+            array_push($productCategoryDescList, $result[0]->show_description);
+        }
+
+        return view('product.index', compact(['products', 'productCategoryDescList']));
     }
 
     public function store(Request $request)

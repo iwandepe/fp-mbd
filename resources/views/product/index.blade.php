@@ -34,7 +34,7 @@
                         </tr>
                         </thead>
                         <tbody class="list">
-                        @foreach ($products as $product)
+                        @foreach ($products as $key => $product)
                             <tr>
                                 <td class="product_id">
                                     {{$product->product_id}}
@@ -72,6 +72,9 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                            <a class="dropdown-item text-primary pr-2" data-toggle="modal" data-target="#categoryDescModal{{$product->product_id}}">
+                                                Category Descriptions
+                                            </a>
                                             <a class="dropdown-item text-primary pr-2" href="/product/{{$product->product_id}}/edit">
                                                 Edit
                                             </a>
@@ -81,6 +84,21 @@
                                         </div>
                                     </div>
                                 </td>
+                                <div class="modal fade" id="categoryDescModal{{$product->product_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Category description of {{$product->product_name}}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {{$productCategoryDescList[$key]}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="modal fade" id="deleteModal{{$product->product_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
