@@ -44,7 +44,7 @@
                         @foreach ($employees as $employee)
                             <tr>
                                 <td class="first_name">
-                                    {{$employee->first_name}}
+                                {{$employee->first_name}}
                                 </td>
                                 <td class="last_name">
                                     {{$employee->last_name}}
@@ -93,6 +93,7 @@
                                 </td>
                                 <td class="photo_path">
                                     <img src="{{$employee->photo_path}}" alt="">
+                                </td>
                                 <td class="text-right">
                                     <div class="dropdown">
                                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,10 +101,10 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow pl-5">
                                             <!-- Button trigger modal -->
-                                            <a href="/employee/{{$employee->employee_id}}/edit" class="text-primary pr-2">
+                                            <a href="/employee/{{$employee->employee_id}}/edit" class="dropdown-item text-primary pr-2" >
                                                 Edit
                                             </a>
-                                            <a href="/employee/{{$employee->employee_id}}/delete" data-toggle="modal" data-target="#deleteModal{{$employee->employee_id}}" class="text-danger">
+                                            <a href="/employee/{{$employee->employee_id}}/delete" data-toggle="modal" data-target="#deleteModal{{$employee->employee_id}}" class="dropdown-item text-danger" >
                                                 Delete
                                             </a>
                                         </div>

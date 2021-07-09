@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderDetailController;
 
@@ -78,3 +79,6 @@ Route::group(['prefix' => '/order_detail'], function() {
     Route::post('/', [OrderDetailController::class, 'store']);
     Route::delete('/{id}', [OrderDetailController::class, 'destroy']);
 });
+
+Route::get('/sales-history', [ReportController::class, 'salesHistory'])->name('sales-history');
+Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
