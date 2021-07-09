@@ -88,6 +88,9 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                            <a class="dropdown-item text-primary" href="/order/{{$order->order_id}}/details">
+                                                Details
+                                            </a>
                                             <a class="dropdown-item text-primary pr-2" href="/order/{{$order->order_id}}/edit">
                                                 Edit
                                             </a>

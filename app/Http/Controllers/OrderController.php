@@ -94,4 +94,23 @@ class OrderController extends Controller
     {
         return view('order.add');
     }
+
+    public function details($id) 
+    {
+
+        $order = Order::findOrFail($id);
+
+        $amountOfProduct = DB::select("SELECT orders_producst_amount({$id}); "); 
+
+        $orderDetail = DB::select("
+            SELECT * FROM orders
+            LEFT OUTER JOIN order_details
+                ON orders.order_id = order_details.order_id
+            LEFT OUTER JOIN products
+                ON order_details.product_id = products.product_id
+            WHERE orders.order_id = {$id}
+        ");
+
+        return view('order.detail', compact(['order', 'amountOfProduct','orderDetail']));
+    }
 }
