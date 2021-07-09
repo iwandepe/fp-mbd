@@ -9,7 +9,7 @@
                     <h3 class="mb-0">Create New Customer</h3>
                 </div>
                 <div class="form ml-4 mr-4">
-                    <form method="POST" enctype="multipart/form-data" action="/customer/form">
+                    <form method="POST" enctype="multipart/form-data" action="/customer">
                         @csrf
                         <div class="form-group">
                             <label for="customer_id" class="form-control-label">Customer id</label>

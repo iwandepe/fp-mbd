@@ -20,7 +20,8 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                         <tr>
-                            <th scope="col" class="sort" data-sort="name">Name</th>
+                            <th scope="col" class="sort" data-sort="first_name">First Name</th>
+                            <th scope="col" class="sort" data-sort="last_name">Last Name</th>
                             <th scope="col" class="sort" data-sort="title">Title</th>
                             <th scope="col" class="sort" data-sort="title_of_courtesy">Title of courtesy</th>
                             <th scope="col" class="sort" data-sort="birth_date">Birth Date</th>
@@ -42,8 +43,11 @@
                         <tbody class="list">
                         @foreach ($employees as $employee)
                             <tr>
-                                <td class="name">
-                                    {{$employee->first_name}} {{$employee->last_name}}
+                                <td class="first_name">
+                                    {{$employee->first_name}}
+                                </td>
+                                <td class="last_name">
+                                    {{$employee->last_name}}
                                 </td>
                                 <td class="title">
                                     {{$employee->title}}
