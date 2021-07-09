@@ -21,4 +21,8 @@ class Customer extends Model
         'phone',
         'fax'
     ];
+    public $timestamps = false;
+    protected $primaryKey = 'customer_id';
+    public $incrementing = false;
+
 }

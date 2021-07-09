@@ -17,21 +17,23 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'supplier_id' => 'required',
-            'company_name' => 'required',
-            'contact_name' => 'required',
-            'contact_title' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'region' => 'required',
-            'postal_code' => 'required',
-            'country' => 'required',
-            'phone' => 'required',
-            'fax' => 'required',
-            'homepage' => 'required'
+            // 'supplier_id' => 'required',
+            'company_name' => 'required'
         ]);
 
-        Supplier::create($request->all());
+        Supplier::create([
+            'company_name' => $request->company_name,
+            'contact_name' => isset($request->contact_name) ? $request->contact_name : null,
+            'contact_title' => isset($request->contact_title) ? $request->contact_title : null,
+            'address' => isset($request->address) ? $request->address : null,
+            'city' => isset($request->city) ? $request->city : null,
+            'region' => isset($request->region) ? $request->region : null,
+            'postal_code' => isset($request->postal_code) ? $request->postal_code : null,
+            'country' => isset($request->country) ? $request->country : null,
+            'phone' => isset($request->phone) ? $request->phone : null,
+            'fax' => isset($request->fax) ? $request->fax : null,
+            'homepage' => isset($request->homepage) ? $request->homepage : null
+        ]);
 
         return redirect('/supplier');
     }
@@ -44,34 +46,23 @@ class SupplierController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'supplier_id' => 'required',
-            'company_name' => 'required',
-            'contact_name' => 'required',
-            'contact_title' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'region' => 'required',
-            'postal_code' => 'required',
-            'country' => 'required',
-            'phone' => 'required',
-            'fax' => 'required',
-            'homepage' => 'required'
+            // 'supplier_id' => 'required',
+            'company_name' => 'required'
         ]);
 
         Supplier::where('supplier_id', $id)
             ->update([
-                'supplier_id' => $request->supplier_id,
-                'company_name' => $request->company_name,
-                'contact_name' => $request->contact_name,
-                'contact_title' => $request->contact_title,
-                'address' => $request->address,
-                'city' => $request->city,
-                'region' => $request->region,
-                'postal_code' => $request->postal_code,
-                'country' => $request->country,
-                'phone' => $request->phone,
-                'fax' => $request->fax,
-                'homepage' => $request->homepage
+            'company_name' => $request->company_name,
+            'contact_name' => isset($request->contact_name) ? $request->contact_name : null,
+            'contact_title' => isset($request->contact_title) ? $request->contact_title : null,
+            'address' => isset($request->address) ? $request->address : null,
+            'city' => isset($request->city) ? $request->city : null,
+            'region' => isset($request->region) ? $request->region : null,
+            'postal_code' => isset($request->postal_code) ? $request->postal_code : null,
+            'country' => isset($request->country) ? $request->country : null,
+            'phone' => isset($request->phone) ? $request->phone : null,
+            'fax' => isset($request->fax) ? $request->fax : null,
+            'homepage' => isset($request->homepage) ? $request->homepage : null
             ]);
 
         return redirect('/supplier');

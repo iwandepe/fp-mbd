@@ -14,51 +14,51 @@
                         @csrf
                         <div class="form-group">
                             <label for="supplier_id" class="form-control-label">Supplier id</label>
-                            <input class="form-control" type="number" value="{{$supplier->supplier_id}}" id="supplier_id">
+                            <input class="form-control" type="number" value="{{$supplier->supplier_id}}" id="supplier_id" name="supplier_id">
                         </div>
                         <div class="form-group">
                             <label for="company_name" class="form-control-label">Company Name</label>
-                            <input class="form-control" type="text" value="{{$supplier->company_name}}" id="company_name">
+                            <input class="form-control" type="text" value="{{$supplier->company_name}}" id="company_name" name="company_name">
                         </div>
                         <div class="form-group">
                             <label for="contact_name" class="form-control-label">Contact Name</label>
-                            <input class="form-control" type="text" value="{{$supplier->contact_name}}" id="contact_name">
+                            <input class="form-control" type="text" value="{{$supplier->contact_name}}" id="contact_name" name="contact_name">
                         </div>
                         <div class="form-group">
                             <label for="contact_title" class="form-control-label">Contact Title</label>
-                            <input class="form-control" type="text" value="{{$supplier->contact_title}}" id="contact_title">
+                            <input class="form-control" type="text" value="{{$supplier->contact_title}}" id="contact_title" name="contact_title">
                         </div>
                         <div class="form-group">
                             <label for="address" class="form-control-label">Address</label>
-                            <input class="form-control" type="text" value="{{$supplier->address}}" id="address">
+                            <input class="form-control" type="text" value="{{$supplier->address}}" id="address" name="address">
                         </div>
                         <div class="form-group">
                             <label for="city" class="form-control-label">City</label>
-                            <input class="form-control" type="text" value="{{$supplier->city}}" id="city">
+                            <input class="form-control" type="text" value="{{$supplier->city}}" id="city" name="city">
                         </div>
                         <div class="form-group">
                             <label for="region" class="form-control-label">Region</label>
-                            <input class="form-control" type="number" value="{{$supplier->region}}" id="region">
+                            <input class="form-control" type="text" value="{{$supplier->region}}" id="region" name="region">
                         </div>
                         <div class="form-group">
                             <label for="postal_code" class="form-control-label">Postal Code</label>
-                            <input class="form-control" type="text" value="{{$supplier->postal_code}}" id="postal_code">
+                            <input class="form-control" type="text" value="{{$supplier->postal_code}}" id="postal_code" name="postal_code">
                         </div>
                         <div class="form-group">
                             <label for="country" class="form-control-label">Country</label>
-                            <input class="form-control" type="text" value="{{$supplier->country}}" id="country">
+                            <input class="form-control" type="text" value="{{$supplier->country}}" id="country" name="country">
                         </div>
                         <div class="form-group">
                             <label for="phone" class="form-control-label">Phone</label>
-                            <input class="form-control" type="text" value="{{$supplier->phone}}" id="phone">
+                            <input class="form-control" type="text" value="{{$supplier->phone}}" id="phone" name="phone">
                         </div>
                         <div class="form-group">
                             <label for="fax" class="form-control-label">Fax</label>
-                            <input class="form-control" type="text" value="{{$supplier->fax}}" id="fax">
+                            <input class="form-control" type="text" value="{{$supplier->fax}}" id="fax" name="fax">
                         </div>
                         <div class="form-group">
                             <label for="homepage" class="form-control-label">Homepage</label>
-                            <input class="form-control" type="text" value="{{$supplier->homepage}}" id="homepage">
+                            <input class="form-control" type="text" value="{{$supplier->homepage}}" id="homepage" name="homepage">
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">Submit</button>
                     </form>

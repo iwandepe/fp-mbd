@@ -13,7 +13,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="customer_id" class="form-control-label">Customer id</label>
-                            <input class="form-control" type="number" value="" id="customer_id">
+                            <input class="form-control" type="text" value="" id="customer_id">
                             @if ($errors->has('customer_id'))
                                 <span class="text-danger">{{ $errors->first('customer_id') }}</span>
                             @endif
