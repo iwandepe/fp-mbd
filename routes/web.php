@@ -75,11 +75,14 @@ Route::group(['prefix' => '/supplier'], function() {
 Route::group(['prefix' => '/order_detail'], function() {
     Route::get('/', [OrderDetailController::class, 'index']);
     Route::get('/add', [OrderDetailController::class, 'add']);
-    Route::get('/{id}/edit', [OrderDetailController::class, 'edit']);
-    Route::put('/{id}', [OrderDetailController::class, 'update']);
+    Route::get('/{order_id}/{product_id}/edit', [OrderDetailController::class, 'edit']);
+    Route::put('/{order_id}/{product_id}', [OrderDetailController::class, 'update']);
     Route::post('/', [OrderDetailController::class, 'store']);
-    Route::delete('/{id}', [OrderDetailController::class, 'destroy']);
+    Route::delete('/{order_id}/{product_id}', [OrderDetailController::class, 'destroy']);
 });
 
+Route::group(['prefix' => '/report'], function()
+{
 Route::get('/sales-history', [ReportController::class, 'salesHistory'])->name('sales-history');
 Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
+});

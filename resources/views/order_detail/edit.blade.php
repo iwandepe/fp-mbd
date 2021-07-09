@@ -9,7 +9,7 @@
                     <h3 class="mb-0">Edit Data Order Detail</h3>
                 </div>
                 <div class="form ml-4 mr-4">
-                    <form method="POST" enctype="multipart/form-data" action="/order_detail/{{$order_detail->product_id}}">
+                    <form method="POST" enctype="multipart/form-data" action="/order_detail/{{$order_detail->order_id}}/{{$order_detail->product_id}}">
                         @method('PUT')
                         @csrf
                         <div class="form-group">

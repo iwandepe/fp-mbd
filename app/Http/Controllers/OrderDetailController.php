@@ -25,8 +25,22 @@ class OrderDetailController extends Controller
             'discount' => 'required'
         ]);
 
-        OrderDetail::create($request->all());
+        // OrderDetail::create([
+        //     'order_id' => $request->order_id,
+        //     'product_id' => $request->product_id,
+        //     'unit_price' => $request->unit_price,
+        //     'quantity' => $request->quantity,
+        //     'discount' => $request->discount
+        // ]);
 
+        $query = 'INSERT INTO order_details VALUES('
+            .$request->order_id.', '
+            .$request->product_id.', \''
+            .$request->unit_price.'\', \''
+            .$request->quantity.'\', \''
+            .$request->discount.'\');';
+        
+        \DB::statement($query);
         return redirect('/order_detail');
     }
 
@@ -35,7 +49,7 @@ class OrderDetailController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $order_id, $product_id)
     {
         $request->validate([
             'unit_price' => 'required',
@@ -43,26 +57,29 @@ class OrderDetailController extends Controller
             'discount' => 'required'
         ]);
 
-        OrderDetail::where('product_id', $id)
+        OrderDetail::where('product_id', $product_id)
+        ->where('order_id', $order_id)
             ->update([
-                'unit_price' => $request->product_name,
-                'quantity' => $request->supplier_id,
-                'discount' => $request->category_id,
+                'unit_price' => $request->unit_price,
+                'quantity' => $request->quantity,
+                'discount' => $request->discount,
             ]);
 
         return redirect('/order_detail');
     }
 
-    public function destroy($id)
+    public function destroy($order_id, $product_id)
     {
-        OrderDetail::where('product_id', '=' ,$id)->first()->delete();
+        OrderDetail::where('product_id', '=' ,$product_id)
+        ->where('order_id', '=' ,$order_id)->delete();
 
         return redirect('/order_detail');
     }
 
-    public function edit($id)
+    public function edit($order_id, $product_id)
     {
-        $order_detail = OrderDetail::where('product_id', $id)->first();
+        $order_detail = OrderDetail::where('product_id', $product_id)
+        ->where('order_id', $order_id)->first();
         return view('order_detail.edit', compact(['order_detail']));
     }
 

@@ -10,7 +10,7 @@
                         <div class="row">
                             <h3 class="my-auto">Products</h3>
                             <div class="ml-auto m-0">
-                                <a href="/product/add" class="btn btn-primary m-0">Create New Product</a>
+                                <a href="/product/add" class="btn btn-primary m-0">Add New Product</a>
                             </div>
                         </div>
                     </div>
