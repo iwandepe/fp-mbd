@@ -21,4 +21,6 @@ class Supplier extends Model
         'fax',
         'homepage'
     ];
+    public $timestamps = false;
+    protected $primaryKey = 'supplier_id';
 }

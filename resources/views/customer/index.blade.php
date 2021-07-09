@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                <form action="/order/{{$customer->customer_id}}" method="POST">
+                                                <form action="/customer/{{$customer->customer_id}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">Ya, hapus data</button>
