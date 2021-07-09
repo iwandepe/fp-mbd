@@ -54,11 +54,16 @@
                             <span class="nav-link-text">Order Detail</span>
                         </a>
                     </li>
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="/sales-history">
                             <i class="ni ni-bullet-list-67 text-primary"></i>
                             <span class="nav-link-text">Sales History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shipper">
+                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <span class="nav-link-text">Shipper Company</span>
                         </a>
                     </li>
 {{--                    <li class="nav-item">--}}

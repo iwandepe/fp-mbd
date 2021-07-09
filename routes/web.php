@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderDetailController;
+use App\Http\Controllers\ShipperController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -83,6 +84,8 @@ Route::group(['prefix' => '/order_detail'], function() {
 
 Route::group(['prefix' => '/report'], function()
 {
-Route::get('/sales-history', [ReportController::class, 'salesHistory'])->name('sales-history');
-Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
+    Route::get('/sales-history', [ReportController::class, 'salesHistory'])->name('sales-history');
+    Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
 });
+
+Route::get('/shipper', [ShipperController::class, 'index']);
