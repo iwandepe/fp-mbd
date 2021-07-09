@@ -29,12 +29,16 @@
                             <input class="form-control" type="text" value="{{$product->quantity_per_unit}}" id="quantity_per_unit" name="quantity_per_unit">
                         </div>
                         <div class="form-group">
-                            <label for="unit_in_stock" class="form-control-label">Unit in Stock</label>
-                            <input class="form-control" type="number" value="{{$product->unit_in_stock}}" id="unit_in_stock" name="unit_in_stock">
+                            <label for="unit_price" class="form-control-label">Unit Price</label>
+                            <input class="form-control" type="number" value="{{$product->unit_price}}" id="unit_price" name="unit_price">
                         </div>
                         <div class="form-group">
-                            <label for="unit_on_order" class="form-control-label">Unit on Order</label>
-                            <input class="form-control" type="number" value="{{$product->unit_on_order}}" id="unit_on_order" name="unit_on_order">
+                            <label for="units_in_stock" class="form-control-label">Unit in Stock</label>
+                            <input class="form-control" type="number" value="{{$product->units_in_stock}}" id="units_in_stock" name="units_in_stock">
+                        </div>
+                        <div class="form-group">
+                            <label for="units_on_order" class="form-control-label">Unit on Order</label>
+                            <input class="form-control" type="number" value="{{$product->units_on_order}}" id="units_on_order" name="units_on_order">
                         </div>
                         <div class="form-group">
                             <label for="reorder_level" class="form-control-label">Reorder Level</label>

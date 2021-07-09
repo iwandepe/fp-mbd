@@ -8,9 +8,9 @@
                 <div class="card-header border-0">
                     <div class="container-fluid">
                         <div class="row">
-                            <h3 class="my-auto">Products</h3>
+                            <h3 class="my-auto">Order Detail</h3>
                             <div class="ml-auto m-0">
-                                <a href="/product/add" class="btn btn-primary m-0">Create New Product</a>
+                                <a href="/order_detail/add" class="btn btn-primary m-0">Add New Order Detail</a>
                             </div>
                         </div>
                     </div>
@@ -52,16 +52,16 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                            <a class="dropdown-item text-primary pr-2" href="/order_detail/{{$order_detail->product_id}}/edit">
+                                            <a class="dropdown-item text-primary pr-2" href="/order_detail/{{$order_detail->order_id}}/{{$order_detail->product_id}}/edit">
                                                 Edit
                                             </a>
-                                            <a class="dropdown-item text-danger" href="/order_detail/{{$order_detail->product_id}}/delete" data-toggle="modal" data-target="#deleteModal{{$order_detail->product_id}}">
+                                            <a class="dropdown-item text-danger" href="/order_detail/{{$order_detail->order_id}}/{{$order_detail->product_id}}/delete" data-toggle="modal" data-target="#deleteModal{{$order_detail->order_id}}{{$order_detail->product_id}}">
                                                 Delete
                                             </a>
                                         </div>
                                     </div>
                                 </td>
-                                <div class="modal fade" id="deleteModal{{$order_detail->product_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="deleteModal{{$order_detail->order_id}}{{$order_detail->product_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -72,7 +72,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                <form action="/order_detail/{{$order_detail->product_id}}" method="POST">
+                                                <form action="/order_detail/{{$order_detail->order_id}}/{{$order_detail->product_id}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">Ya, hapus data</button>
