@@ -66,6 +66,12 @@
                             <span class="nav-link-text">Shipper Company</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bonus">
+                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <span class="nav-link-text">Employee Bonus</span>
+                        </a>
+                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link" href="examples/icons.html">--}}
 {{--                            <i class="ni ni-planet text-orange"></i>--}}
