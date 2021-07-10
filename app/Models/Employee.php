@@ -32,26 +32,4 @@ class Employee extends Model
         'reports_to',
         'photo_path'
     ];
-
-    public function orders() {
-        return $this->hasMany(Order::class);
-    }
-
-    public function employee_territories() {
-        return $this->hasMany(EmployeeTerritory::class);
-    }
-
-    public function employees() {
-        return $this->hasMany(Employee::class);
-    }
-
-    public static function boot() {
-        parent::boot();
-
-        static::deleting(function($employee) {
-            $employee->orders()->delete();
-            $employee->employee_territories()->delete();
-            $employee->employees()->delete();
-        });
-    }
 }
