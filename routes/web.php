@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BonusController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EmployeeController;
@@ -89,3 +90,15 @@ Route::group(['prefix' => '/sales-history'], function()
 });
 
 Route::get('/shipper', [ShipperController::class, 'index']);
+
+Route::group(['prefix' => '/bonus'], function()
+{
+Route::get('/', [BonusController::class, 'totalBonus']);
+Route::post('/', [BonusController::class, 'callBonus']);
+});
+
+// Route::group(['prefix' => '/bonus'], function()
+// {
+//     Route::get('/bonus', [BonusController::class, 'totalBonus']);
+//     // Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
+// });
