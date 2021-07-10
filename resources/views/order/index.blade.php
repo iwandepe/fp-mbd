@@ -58,6 +58,9 @@
                                             <a class="dropdown-item text-primary" data-toggle="modal" data-target="#details{{$order->order_id}}">
                                                 Details
                                             </a>
+                                            <a class="dropdown-item text-primary" href="/order/{{$order->order_id}}/total">
+                                                Check Total Price
+                                            </a>
                                             <a class="dropdown-item text-primary pr-2" href="/order/{{$order->order_id}}/edit">
                                                 Edit
                                             </a>

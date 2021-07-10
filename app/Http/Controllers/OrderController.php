@@ -125,4 +125,29 @@ class OrderController extends Controller
 
         return view('order.detail', compact(['order', 'amountOfProduct','orderDetail']));
     }
+
+
+    public function totalprice($id)
+    {
+        // $order = Order::findOrFail($id);
+
+        $totalOrder = DB::select("
+        SELECT * FROM log_total_baru WHERE log_total_baru.order_id = {$id}");
+
+        return view('order.total', compact(['totalOrder']));
+
+    }
+
+    public function cekDiscount($id)
+    {
+        // $order = Order::findOrFail($id);
+        // $id = $request->order_id;
+
+        $totalOrder = DB::select("
+         CALL add_discount({$id});");
+        //  dd($totalOrder);
+
+         return redirect("/order/{$id}/total");
+
+    }
 }
