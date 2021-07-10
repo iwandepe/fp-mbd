@@ -13,49 +13,49 @@
                         @csrf
                         <div class="form-group">
                             <label for="customer_id" class="form-control-label">Customer id</label>
-                            <input class="form-control" type="text" value="" id="customer_id">
+                            <input class="form-control" type="text" value="" id="customer_id" name="customer_id">
                             @if ($errors->has('customer_id'))
                                 <span class="text-danger">{{ $errors->first('customer_id') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="employee_id" class="form-control-label">Employee id</label>
-                            <input class="form-control" type="number" value="" id="employee_id">
+                            <input class="form-control" type="number" value="" id="employee_id" name="employee_id">
                             @if ($errors->has('employee_id'))
                                 <span class="text-danger">{{ $errors->first('employee_id') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="order_date" class="form-control-label">Order Date</label>
-                            <input class="form-control" type="datetime-local" value="" id="order_date">
+                            <input class="form-control" type="datetime-local" value="" id="order_date" name="order_date">
                             @if ($errors->has('order_date'))
                                 <span class="text-danger">{{ $errors->first('order_date') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="required_date" class="form-control-label">Required Date</label>
-                            <input class="form-control" type="datetime-local" value="" id="required_date">
+                            <input class="form-control" type="datetime-local" value="" id="required_date" name="required_date">
                             @if ($errors->has('required_date'))
                                 <span class="text-danger">{{ $errors->first('required_date') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="shipped_date" class="form-control-label">Shipped Date</label>
-                            <input class="form-control" type="datetime-local" value="" id="shipped_date">
+                            <input class="form-control" type="datetime-local" value="" id="shipped_date" name="shipped_date">
                             @if ($errors->has('shipped_date'))
                                 <span class="text-danger">{{ $errors->first('shipped_date') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="ship_via" class="form-control-label">Shipper id</label>
-                            <input class="form-control" type="number" value="" id="ship_via">
+                            <input class="form-control" type="number" value="" id="ship_via" name="ship_via">
                             @if ($errors->has('ship_via'))
                                 <span class="text-danger">{{ $errors->first('ship_via') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="freight" class="form-control-label">Freight</label>
-                            <input class="form-control" type="number" value="" id="freight">
+                            <input class="form-control" type="number" value="" id="freight" name="ship_via">
                             @if ($errors->has('freight'))
                                 <span class="text-danger">{{ $errors->first('freight') }}</span>
                             @endif
@@ -63,42 +63,42 @@
                         </div>
                         <div class="form-group">
                             <label for="ship_name" class="form-control-label">Ship Name</label>
-                            <input class="form-control" type="text" value="" id="ship_name">
+                            <input class="form-control" type="text" value="" id="ship_name" name="ship_name">
                             @if ($errors->has('ship_name'))
                                 <span class="text-danger">{{ $errors->first('ship_name') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="ship_address" class="form-control-label">Ship Addres</label>
-                            <input class="form-control" type="text" value="" id="ship_address">
+                            <input class="form-control" type="text" value="" id="ship_address" name="ship_address">
                             @if ($errors->has('ship_address'))
                                 <span class="text-danger">{{ $errors->first('ship_address') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="ship_city" class="form-control-label">Ship City</label>
-                            <input class="form-control" type="text" value="" id="ship_city">
+                            <input class="form-control" type="text" value="" id="ship_city" name="ship_city">
                             @if ($errors->has('ship_city'))
                                 <span class="text-danger">{{ $errors->first('ship_city') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="ship_region" class="form-control-label">Ship Region</label>
-                            <input class="form-control" type="text" value="" id="ship_region">
+                            <input class="form-control" type="text" value="" id="ship_region" name="ship_region">
                             @if ($errors->has('ship_region'))
                                 <span class="text-danger">{{ $errors->first('ship_region') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="ship_postal_code" class="form-control-label">Ship Postal Code</label>
-                            <input class="form-control" type="text" value="" id="ship_postal_code">
+                            <input class="form-control" type="text" value="" id="ship_postal_code" name="ship_postal_code">
                             @if ($errors->has('ship_postal_code'))
                                 <span class="text-danger">{{ $errors->first('ship_postal_code') }}</span>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="ship_country" class="form-control-label">Ship Country</label>
-                            <input class="form-control" type="text" value="" id="ship_country">
+                            <input class="form-control" type="text" value="" id="ship_country" name="ship_country">
                             @if ($errors->has('ship_country'))
                                 <span class="text-danger">{{ $errors->first('first_name') }}</span>
                             @endif
