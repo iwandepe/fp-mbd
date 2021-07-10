@@ -42,6 +42,8 @@ Route::group(['prefix' => '/order'], function() {
     Route::get('/add', [OrderController::class, 'add']);
     Route::get('/{id}/edit', [OrderController::class, 'edit']);
     Route::get('/{id}/details', [OrderController::class, 'details']);
+    Route::get('/{id}/total', [OrderController::class, 'totalprice']);
+    Route::post('/{id}/total', [OrderController::class, 'cekDiscount']);
     Route::put('/{id}', [OrderController::class, 'update']);
     Route::post('/', [OrderController::class, 'store']);
     Route::delete('/{id}', [OrderController::class, 'destroy']);
