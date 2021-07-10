@@ -12,7 +12,27 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        return view('order.index', compact(['orders']));
+
+        $amountOfProductList = [];
+        $orderDetailList = [];
+
+        foreach($orders as $order) {
+            $amountOfProduct = DB::select("SELECT orders_producst_amount({$order->order_id}); "); 
+
+            $orderDetail = DB::select("
+                SELECT * FROM orders
+                LEFT OUTER JOIN order_details
+                    ON orders.order_id = order_details.order_id
+                LEFT OUTER JOIN products
+                    ON order_details.product_id = products.product_id
+                WHERE orders.order_id = {$order->order_id}
+            ");
+
+            array_push($amountOfProductList, $amountOfProduct);
+            array_push($orderDetailList, $orderDetail);
+        }
+
+        return view('order.index', compact(['orders', 'amountOfProductList', 'orderDetailList']));
     }
 
     public function store(Request $request)
@@ -102,17 +122,6 @@ class OrderController extends Controller
     {
 
         $order = Order::findOrFail($id);
-
-        $amountOfProduct = DB::select("SELECT orders_producst_amount({$id}); "); 
-
-        $orderDetail = DB::select("
-            SELECT * FROM orders
-            LEFT OUTER JOIN order_details
-                ON orders.order_id = order_details.order_id
-            LEFT OUTER JOIN products
-                ON order_details.product_id = products.product_id
-            WHERE orders.order_id = {$id}
-        ");
 
         return view('order.detail', compact(['order', 'amountOfProduct','orderDetail']));
     }
