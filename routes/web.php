@@ -12,6 +12,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\ShipperController;
+use App\Http\Controllers\StockController;
 
 Route::get('/', [DashboardController::class, 'index']);
 
@@ -96,8 +97,8 @@ Route::get('/', [BonusController::class, 'totalBonus']);
 Route::post('/', [BonusController::class, 'callBonus']);
 });
 
-// Route::group(['prefix' => '/bonus'], function()
-// {
-//     Route::get('/bonus', [BonusController::class, 'totalBonus']);
-//     // Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
-// });
+Route::group(['prefix' => '/stock'], function()
+{
+Route::get('/', [StockController::class, 'index']);
+Route::post('/', [StockController::class, 'callStock']);
+});
