@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloqquent\Builder;
 
 class DashboardController extends Controller
 {
@@ -17,6 +18,12 @@ class DashboardController extends Controller
             array_push($orderAmountByCityList, $result[0]->order_amount_by_city);
         }
 
-        return view('dashboard', compact(['cities', 'orderAmountByCityList']));
+        
+        $employee = DB::table('employees')->count();
+        $customer = DB::table('customers')->count();
+        $order = DB::table('orders')->count();
+        $product= DB::table('order_details')->sum('quantity');
+        return view('dashboard', compact(['cities', 'orderAmountByCityList', 'product', 'customer', 'order', 'employee']));
+
     }
 }
