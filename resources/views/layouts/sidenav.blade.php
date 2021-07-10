@@ -14,62 +14,62 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/">
-                            <i class="ni ni-tv-2 text-primary"></i>
+                            <i class="ni ni-chart-pie-35 text-primary"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/employee">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
-                            <span class="nav-link-text">Employee</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/order">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <i class="ni ni-cart text-primary"></i>
                             <span class="nav-link-text">Order</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/product">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
-                            <span class="nav-link-text">Product</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/customer">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
-                            <span class="nav-link-text">Customer</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="/supplier">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
-                            <span class="nav-link-text">Supplier</span>
-                        </a>
-                    <li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/order_detail">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <i class="ni ni-basket text-primary"></i>
                             <span class="nav-link-text">Order Detail</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/sales-history">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
-                            <span class="nav-link-text">Sales History</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/shipper">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
-                            <span class="nav-link-text">Shipper Company</span>
+                        <a class="nav-link" href="/employee">
+                            <i class="ni ni-badge text-primary"></i>
+                            <span class="nav-link-text">Employee</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/bonus">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <i class="ni ni-favourite-28 text-primary"></i>
                             <span class="nav-link-text">Employee Bonus</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/customer">
+                            <i class="ni ni-satisfied text-primary"></i>
+                            <span class="nav-link-text">Customer</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/product">
+                            <i class="ni ni-tag text-primary"></i>
+                            <span class="nav-link-text">Product</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="/supplier">
+                            <i class="ni ni-building text-primary"></i>
+                            <span class="nav-link-text">Supplier</span>
+                        </a>
+                    <li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/shipper">
+                            <i class="ni ni-delivery-fast -67 text-primary"></i>
+                            <span class="nav-link-text">Shipper Company</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sales-history">
+                            <i class="ni ni-archive-2 text-primary"></i>
+                            <span class="nav-link-text">Sales History</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -147,19 +147,6 @@
 {{--                            <span class="nav-link-text">Components</span>--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">--}}
-{{--                            <i class="ni ni-chart-pie-35"></i>--}}
-{{--                            <span class="nav-link-text">Plugins</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link active active-pro" href="examples/upgrade.html">--}}
-{{--                            <i class="ni ni-send text-dark"></i>--}}
-{{--                            <span class="nav-link-text">Upgrade to PRO</span>--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
             </div>
         </div>
     </div>

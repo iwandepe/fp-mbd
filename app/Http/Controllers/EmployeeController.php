@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\EmployeeTerritory;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -82,9 +85,30 @@ class EmployeeController extends Controller
 
     public function destroy($id)
     {
-        Employee::where('employee_id', '=', $id)->first()->delete();
+        $this->cascade($id);
 
         return redirect('/employee');
+    }
+
+    private function cascade($id) {
+        EmployeeTerritory::where('employee_id', '=', $id)->delete();
+        
+        $orders = Order::where('employee_id', '=', $id)->get();
+
+        foreach($orders as $order) {
+            OrderDetail::where('order_id', '=', $order->order_id)->delete();
+            DB::table('log_total_baru')->where('order_id', '=', $order->order_id)->delete();
+        }
+
+        Order::where('employee_id', '=', $id)->delete();
+
+        $reports_to = Employee::where('reports_to', '=', $id)->get();
+
+        foreach($reports_to as $report_to) {
+            $this->cascade($report_to->employee_id);
+        }
+
+        Employee::where('employee_id', '=', $id)->delete();
     }
 
     public function edit($id)

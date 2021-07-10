@@ -17,7 +17,7 @@
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
+                    <table id="example" class="table align-items-center table-flush the-table">
                         <thead class="thead-light">
                         <tr>
                             <th scope="col" class="sort" data-sort="first_name">First Name</th>
@@ -34,7 +34,6 @@
                             <th scope="col" class="sort" data-sort="home_phone">Phone</th>
                             <th scope="col" class="sort" data-sort="extension">Extension</th>
                             <th scope="col" class="sort" data-sort="photo">photo</th>
-                            <th scope="col" class="sort" data-sort="notes">Notes</th>
                             <th scope="col" class="sort" data-sort="reports_to">Reports To</th>
                             <th scope="col" class="sort" data-sort="photo_path">Photo Path</th>
                             <th scope="col"></th>
@@ -85,9 +84,6 @@
                                 <td class="photo">
 {{--                                    <img src="data:{{$employee->photo}}" alt="">--}}
                                 </td>
-                                <td class="notes">
-                                    {{$employee->notes}}
-                                </td>
                                 <td class="reports_to">
                                     {{$employee->reports_to}}
                                 </td>
@@ -100,33 +96,36 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow pl-5">
-                                            <!-- Button trigger modal -->
+                                            <a class="dropdown-item text-primary pr-2" data-toggle="modal" data-target="#detailsModal{{$employee->employee_id}}" >
+                                                Details
+                                            </a>
                                             <a href="/employee/{{$employee->employee_id}}/edit" class="dropdown-item text-primary pr-2" >
                                                 Edit
-                                            </a>
-                                            <a href="/employee/{{$employee->employee_id}}/delete" data-toggle="modal" data-target="#deleteModal{{$employee->employee_id}}" class="dropdown-item text-danger" >
-                                                Delete
                                             </a>
                                         </div>
                                     </div>
                                 </td>
-                                <!-- Delete Modal -->
-                                <div class="modal fade" id="deleteModal{{$employee->employee_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="detailsModal{{$employee->employee_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Apakah anda yakin?</h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Details of employee {{$employee->first_name}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+                                            <div class="modal-body">
+                                            <form>
+                                                <div class="form-group row">
+                                                    <label for="notes" class="col-sm-2 col-form-label">Notes</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea type="text" height="4" readonly class="form-control-plaintext" id="notes" rows="10">{{$employee->notes}}</textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                                <form action="/employee/{{$employee->employee_id}}" method="POST">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-primary">Ya, hapus data</button>
-                                                </form>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                                             </div>
                                         </div>
                                     </div>

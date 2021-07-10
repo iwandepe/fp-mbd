@@ -32,6 +32,7 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset("css/argon.css?v=1.2.0")}}" type="text/css">
+    <link rel="stylesheet" href="{{asset("css/my.css")}}" type="text/css">
 <!-- 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" type="text/css">

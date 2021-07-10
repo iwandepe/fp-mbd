@@ -104,17 +104,17 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Apakah anda yakin?</h5>
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                                 <form action="/order/{{$order->order_id}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">Ya, hapus data</button>
+                                                    <button type="submit" class="btn btn-primary">Yes, delete data</button>
                                                 </form>
                                             </div>
                                         </div>

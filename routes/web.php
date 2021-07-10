@@ -84,10 +84,10 @@ Route::group(['prefix' => '/order_detail'], function() {
     Route::delete('/{order_id}/{product_id}', [OrderDetailController::class, 'destroy']);
 });
 
-Route::group(['prefix' => '/report'], function()
+Route::group(['prefix' => '/sales-history'], function()
 {
-    Route::get('/sales-history', [ReportController::class, 'salesHistory'])->name('sales-history');
-    Route::post('/sales-history', [ReportController::class, 'salesHistoryPost']);
+    Route::get('/', [ReportController::class, 'salesHistory'])->name('sales-history');
+    Route::post('/', [ReportController::class, 'salesHistoryPost']);
 });
 
 Route::get('/shipper', [ShipperController::class, 'index']);

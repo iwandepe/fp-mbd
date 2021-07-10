@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -79,7 +80,9 @@ class OrderController extends Controller
 
     public function destroy($id)
     {
-        Order::where('order_id', '=' ,$id)->first()->delete();
+        OrderDetail::where('order_id', '=', $id)->delete();
+        DB::table('log_total_baru')->where('order_id', '=', $id)->delete();
+        Order::where('order_id', '=', $id)->delete();
 
         return redirect('/order');
     }
