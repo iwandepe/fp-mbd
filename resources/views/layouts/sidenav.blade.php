@@ -74,7 +74,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/stock">
-                            <i class="ni ni-bullet-list-67 text-primary"></i>
+                            <i class="ni ni-app text-primary"></i>
                             <span class="nav-link-text">Check Stock Status</span>
                         </a>
                     </li>
